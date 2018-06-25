@@ -10,10 +10,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Author;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class AuthorController extends Controller
 {
     public function showAllAuthors() {
+        //Log::error("show a error log...");
         return $this->success(Author::all());
     }
 

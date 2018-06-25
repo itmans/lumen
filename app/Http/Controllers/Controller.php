@@ -8,6 +8,8 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
 
+
+
     /**
      * @param $data
      * @param int $code

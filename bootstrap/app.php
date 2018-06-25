@@ -69,6 +69,7 @@ $app->singleton(
 
 $app->routeMiddleware([
     'jwt.auth' => App\Http\Middleware\JwtMiddleware::class,
+    'req.log' => App\Http\Middleware\LogMiddleware::class
 ]);
 
 
@@ -103,6 +104,13 @@ $app->router->group([
 ], function ($router) {
     require __DIR__.'/../routes/web.php';
 });
+
+
+
+
+
+
+
 
 $app->configure('app');
 

@@ -20,7 +20,7 @@ $router->get('/', function () use ($router) {
 
 
 
-$router->group(['middleware' => 'jwt.auth'], function () use ($router) {
+$router->group(['middleware' => ['jwt.auth', 'req.log']], function () use ($router) {
     $router->get('authors', ['uses' => 'AuthorController@showAllAuthors']);
     $router->get('authors/{id}', ['uses' => 'AuthorController@showOneAuthor']);
     $router->post('authors', ['uses' => 'AuthorController@create']);
