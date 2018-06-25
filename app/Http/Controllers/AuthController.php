@@ -20,7 +20,7 @@ class AuthController extends Controller
 
     private $request;
 
-    public function __construct(Request $request)
+    public function __construct(UserAuthRequest $request)
     {
         $this->request = $request;
     }
@@ -36,7 +36,8 @@ class AuthController extends Controller
     }
 
     public function authenticate() {
-        $this->validators($this->request, UserAuthRequest::rules(), UserAuthRequest::messages());
+        //$this->request->validate();
+        //$this->validators($this->request, UserAuthRequest::rules(), UserAuthRequest::messages());
         $user = User::where('email', $this->request->input('email'))->first();
         if (!$user) {
             return $this->error(config('app.user_not_exist.msg'), config('app.user_not_exist.code'));

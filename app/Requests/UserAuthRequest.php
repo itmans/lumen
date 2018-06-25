@@ -9,15 +9,12 @@
 namespace App\Requests;
 
 
-
-class UserAuthRequest
+class UserAuthRequest extends FormRequest
 {
-
     /**
      * @return array
      */
-    public static function rules() {
-
+    public function rules() {
         return [
             'email' => 'required|email',
             'password' => 'required'
@@ -27,7 +24,7 @@ class UserAuthRequest
     /**
      * @return array
      */
-    public static function messages() {
+    public  function messages() {
         return [
             'email.required' => '邮箱不能为空',
             'email.email' => '邮箱格式错误',

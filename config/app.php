@@ -9,13 +9,11 @@
 //code
 const TOKEN_ERROR_CODE = 10001;
 const USER_NOT_EXIST_CODE = 10002;
-
+const REQ_PARAMS_ERROR_CODE = 10003;
 
 //msg
 const TOKEN_ERROR_CODE_MSG = "token错误";
 const USER_NOT_EXIST_CODE_MSG = "用户不存在";
-
-
 
 
 return [
@@ -29,6 +27,8 @@ return [
         'code' => TOKEN_ERROR_CODE,
         'msg' => TOKEN_ERROR_CODE_MSG
     ],
+
+    'req_params_error_code' => REQ_PARAMS_ERROR_CODE,
 
     'token_expired' => 86400,
 

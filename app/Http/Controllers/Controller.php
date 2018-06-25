@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -36,18 +35,5 @@ class Controller extends BaseController
         ])->send();
     }
 
-    /**
-     * @param Request $request
-     * @param $rules
-     * @param $message
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function validators(Request $request, $rules, $message)
-    {
-        $validate = Validator($request->all(), $rules, $message);
-        if ($validate->fails()) {
-            return $this->error(array_values($validate->errors()->toArray())[0][0], 1000);
-        }
-    }
 }
 

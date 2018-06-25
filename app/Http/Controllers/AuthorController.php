@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Log;
 
 class AuthorController extends Controller
 {
-    public function showAllAuthors() {
+    public function showAllAuthors(Request $request) {
         //Log::error("show a error log...");
+        //print_r($request->auth->toArray());exit;
         return $this->success(Author::all());
     }
 
