@@ -5,7 +5,6 @@ use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
 use Laravel\Lumen\Http\Redirector;
 use Illuminate\Container\Container;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\UnauthorizedException;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -212,7 +211,7 @@ class FormRequest extends Reqst implements ValidatesWhenResolved
     }
 
     public function validate() {
-        $validate = Validator::make(Request::all(), $this->rules(), $this->messages());
+        $validate = Validator::make($this->all(), $this->rules(), $this->messages());
         if ($validate->fails()) {
             return response()->json([
                 'code' => config('app.req_params_error_code'),
