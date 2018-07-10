@@ -89,6 +89,7 @@ $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 //$app->register(Dingo\Api\Provider\LumenServiceProvider::class);
 $app->register(App\Providers\FormRequestServiceProvider::class);
+$app->register(Illuminate\Redis\RedisServiceProvider::class);
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes
